@@ -1,8 +1,12 @@
-import * as React from 'react';
+import React from 'react';
+import Title from 'components/Title';
 
 function App() {
   return (
-    <div>app</div>
+    <div>
+      <Title type='small' title='小字' />
+      <Title type='large' title='大字' />
+    </div>
   );
 }
 
