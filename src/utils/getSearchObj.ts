@@ -1,6 +1,6 @@
-const getSearchObj=()=>{
-  const {search}=window.location;
-  const searchStr=search.slice(1);
+const getSearchObj = () => {
+  const { search } = window.location;
+  const searchStr = search.slice(1);
   const pairs = searchStr.split("&");
 
   // { 'a': '1' }
@@ -13,6 +13,6 @@ const getSearchObj=()=>{
   });
 
   return searchObj;
-}
+};
 
 export default getSearchObj;

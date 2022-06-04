@@ -1,13 +1,13 @@
-import {RootState} from '../index';
+import { RootState } from "../index";
 
-export const selectUser=(state:RootState)=>{
-  const {id,age,name}=state.user;
+export const selectUser = (state: RootState) => {
+  const { id, age, name } = state.user;
 
   return {
     id,
     age,
-    name
-  }
-}
+    name,
+  };
+};
 
 export const selectUserFetchStatus = (state: RootState) => state.user.status;

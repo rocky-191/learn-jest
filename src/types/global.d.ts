@@ -1,5 +1,5 @@
 declare namespace globalThis {
-  var jsdom: any;
+  let jsdom: any;
 }
 
 declare module "*.less" {
