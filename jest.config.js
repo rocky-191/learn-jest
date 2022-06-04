@@ -6,7 +6,7 @@
 // const { compilerOptions } = require('./tsconfig')
 
 module.exports = {
-  preset: 'ts-jest',
+  preset: "ts-jest",
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -66,12 +66,10 @@ module.exports = {
   // globals: {},
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
-  // maxWorkers: "50%",
+  maxWorkers: 1,
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    "node_modules","src"
-  ],
+  moduleDirectories: ["node_modules", "src"],
 
   // An array of file extensions your modules use
   // moduleFileExtensions: [
@@ -85,7 +83,7 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "@/(.*)": "<rootDir>/src/$1"
+    "@/(.*)": "<rootDir>/src/$1",
   },
   // moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
 
@@ -134,7 +132,7 @@ module.exports = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ['./tests/jest.setup.ts'],
+  setupFilesAfterEnv: ["./tests/jest.setup.ts"],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -145,7 +143,7 @@ module.exports = {
   // The test environment that will be used for testing
   // testEnvironment: "jest-environment-node",
   // testEnvironment: 'jest-environment-jsdom-global'
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -181,7 +179,13 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+    // ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":
+    //   "jest-transform-stub",
+    // 使用 swc 转译 JavaScript 和 TypeScrit
+    "^.+\\.(t|j)sx?$": ["@swc/jest"],
+    // 静态资源 stub 转译
+    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":
+      "jest-transform-stub",
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
