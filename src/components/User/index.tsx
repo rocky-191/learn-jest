@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useAppDispatch, useAppSelector } from "../../store";
-import { fetchUserThunk } from "store/user/thunks";
-import { selectUser, selectUserFetchStatus } from "store/user/selectors";
+import { fetchUserThunk } from "store/user/thunk";
+import { selectUser, selectUserFetchStatus } from "store/user/selector";
 import { Button } from "antd";
 
 const User: FC = () => {
