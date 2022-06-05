@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
-    "test": "jest"
+    "test": "jest --silent"
   },
   "keywords": [],
   "author": "",

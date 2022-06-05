@@ -11,8 +11,7 @@ const User: FC = () => {
   const status = useAppSelector(selectUserFetchStatus);
 
   const onClick = async () => {
-    const res = await dispatch(fetchUserThunk());
-    console.log("fetchUserThunk", res);
+    await dispatch(fetchUserThunk());
   };
 
   return (
